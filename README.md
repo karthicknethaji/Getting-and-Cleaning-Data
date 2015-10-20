@@ -1,7 +1,7 @@
 # Getting-and-Cleaning-Data
 Project to collect, work with, and clean a data set and finally prepare a tidy data set
 
-The project compprises of a single script 'run_analysis.R' that performs the following activities:
+The project comprises of a single script 'run_analysis.R' that performs the following activities:
 1) Setting up libraries required for the project
 2) Download the project file from web and unzip it
 3) Read the required project data files and merge training and test datasets independently
