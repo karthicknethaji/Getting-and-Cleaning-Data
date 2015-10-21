@@ -31,6 +31,8 @@ Smry_Data --> Using group_by, the variables that are needed to be aggregated are
 Tidy_Data --> Using sumarise_each function, the mean of each of the variables in Smry_Data are summarized to be represented in Tidy_Data
 
 RENAME THE COLUMN VARIABLES TO PROVIDE DESCRIPTIVE VARIABLE NAMES
-String function str_sub is applied over the column names in Tidy dataset to provide descriptive variables. Since the names are already explanatory, only the first letter t/f in the existing column names are just ignored.
+1) String function str_sub is applied over the column names in Tidy dataset to remove only the first letter t/f in the existing column.
+2) The function braces () are removed then.
+3) Later column names are converted to lower case to indicate the descriptive variable names.
 
 Finally, the data from Tidy_Data dataset is exported to a flat file using write.table.
