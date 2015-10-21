@@ -29,4 +29,8 @@ MERGE ALL DATA TOGETHER
 Mstr_Data --> Using cbind, all the data from the datasets subject_data, y_act_lbl and x_data are combined together
 Smry_Data --> Using group_by, the variables that are needed to be aggregated are grouped
 Tidy_Data --> Using sumarise_each function, the mean of each of the variables in Smry_Data are summarized to be represented in Tidy_Data
+
+RENAME THE COLUMN VARIABLES TO PROVIDE DESCRIPTIVE VARIABLE NAMES
+String function str_sub is applied over the column names in Tidy dataset to provide descriptive variables. Since the names are already explanatory, only the first letter t/f in the existing column names are just ignored.
+
 Finally, the data from Tidy_Data dataset is exported to a flat file using write.table.
