@@ -47,5 +47,8 @@ Mstr_Data <- rename(Mstr_Data, c("y_act_lbl$Activity" = "Activity"))
 Smry_Data <- Mstr_Data %>% group_by(Subject_Id, Activity)
 Tidy_Data <- Smry_Data %>% summarise_each(funs(mean))
 
+# Rename the variables to provide descriptive variable names
+names(Tidy_Data)[3:81] <- str_sub(feat_meanstd_c, start = 2L, end = -1L)
+
 write.table(Tidy_Data, "./Tidy_Dataset.csv", sep=",", row.names=FALSE)
 
