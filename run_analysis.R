@@ -29,7 +29,7 @@ feat_transpose <- t(features$V2)
 colnames(x_data) <- feat_transpose
 
 # Identify mean|std columns and filter it from the x_data
-features_meanstd <- filter(features, grepl('mean()|std()', features$V2))
+features_meanstd <- filter(features, grepl('mean\\(\\)|std\\(\\)', features$V2))
 feat_meanstd_c <- as.vector(features_meanstd$V2)
 x_data <- select(x_data[ , !duplicated(colnames(x_data))], one_of(feat_meanstd_c))
 
@@ -48,7 +48,8 @@ Smry_Data <- Mstr_Data %>% group_by(Subject_Id, Activity)
 Tidy_Data <- Smry_Data %>% summarise_each(funs(mean))
 
 # Rename the variables to provide descriptive variable names
-names(Tidy_Data)[3:81] <- str_sub(feat_meanstd_c, start = 2L, end = -1L)
+feat_meanstd_names <- str_sub(feat_meanstd_c, start = 2L, end = -1L)
+feat_meanstd_names <- gsub("\\(\\)", "", feat_meanstd_names)
+names(Tidy_Data)[3:68] <- tolower(feat_meanstd_names)
 
-write.table(Tidy_Data, "./Tidy_Dataset.csv", sep=",", row.names=FALSE)
-
+write.table(Tidy_Data, "./Tidy_Dataset.txt", sep=",", row.names=FALSE)
