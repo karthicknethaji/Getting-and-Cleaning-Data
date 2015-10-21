@@ -10,6 +10,7 @@ The project comprises of a single script 'run_analysis.R' that performs the foll
 6) Read activity labels file and substitute numeric values with descriptions
 7) Merge all data togethet to form Mstr_Data dataset
 8) Creates Tidy data set with average of each variable for each activity and each subject
-9) Generates tidy dataset into a csv file
+9) Renames the column variables in Tiday dataset to provide descriptive names
+10) Generates tidy dataset into a csv file
 
 
